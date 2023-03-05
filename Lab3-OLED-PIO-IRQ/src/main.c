@@ -56,9 +56,9 @@ void pisca_led(int n){
 		but_flag = 0;
 	}
 	if(but_flag == 3){
-		delay -= 100;
-		if(delay < 100){
-			delay = 100;
+		delay += 100;
+		if(delay > 1000){
+			delay = 1000;
 		}
 		freq = (double) 1000 / (2 * delay);
 		sprintf(show_display, "Freq: %.2fHz", freq);
@@ -175,9 +175,9 @@ int main (void)
 		   }
 			if(but_flag == 3){
 				but_flag = 0;
-				delay -= 100;
-				if(delay < 100){
-					delay = 100;
+				delay += 100;
+				if(delay > 1000){
+					delay = 1000;
 				}
 				freq = (double) 1000 / (2 * delay);
 				sprintf(show_display, "Freq: %.2fHz", freq);
